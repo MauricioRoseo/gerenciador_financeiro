@@ -1,6 +1,6 @@
 # Projeto gerenciador Financeiro
 
-**Autor:** Mauricio Roseo
+**Autores:** Mauricio Roseo, Hannah Sofia e Pablo Luydy
 
 ### Descrição do projeto
 
