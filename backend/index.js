@@ -68,7 +68,7 @@ app.get("/pessoa/buscaremail/:email", async (req, res) => {
 
 app.post("/pessoa", async (req, res) => {
   const { nome, email } = req.body;
-  const [query] = await conection.execute(
+  const [query] = await connection.execute(
     "insert into pessoa (nome, email) values (?, ?)",
     [nome, email]
   );
@@ -79,7 +79,7 @@ app.put("/pessoa/:id", async (req, res) => {
   const { id } = req.params;
   const { nome, email } = req.body;
 
-  const [query] = await conection.execute(
+  const [query] = await connection.execute(
     "update pessoa set nome = ?, email = ? where id = ?",
     [nome, email, id]
   );
@@ -88,7 +88,7 @@ app.put("/pessoa/:id", async (req, res) => {
 
 app.delete("/pessoa/:id", async (req, res) => {
   const { id } = req.params;
-  const [query] = await conection.execute("delete from pessoa where id = ?", [
+  const [query] = await connection.execute("delete from pessoa where id = ?", [
     id,
   ]);
   return res.json(query);
